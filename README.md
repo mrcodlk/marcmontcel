@@ -1,50 +1,36 @@
-# marcmontcel.be
+# marcmontcel.be — V2 Premium
 
-Site officiel de Marc Montcel.
+Version visuelle finale du site de Marc Montcel.
 
-## Déjà configuré
-- Domaine : `https://marcmontcel.be`
-- E-mail : `marcmontcel@gmail.com`
-- Amazon : `https://www.amazon.fr/dp/B0HGGFF3XF`
-- Sitemap : `https://marcmontcel.be/sitemap.xml`
-- CNAME : `marcmontcel.be`
-
-## Pages
-- Accueil
-- Le livre
-- L'auteur
-- Presse
-- Contact
-- Mentions & confidentialité
-- Confirmation formulaire
-- 404
-
-## Images
-La couverture et la quatrième de couverture fournies par l'auteur sont intégrées dans `assets/img/`.
-
-## Contact
-Le formulaire statique utilise FormSubmit pour envoyer les messages vers `marcmontcel@gmail.com`.
-Voir `GUIDE-GITHUB.md` pour la mise en ligne.
-
-
-## IMPORTANT — structure du dépôt
-
-Les dossiers `css`, `img` et `js` doivent être directement à la racine du dépôt,
-au même niveau que `index.html`.
-
-Structure attendue :
+## Structure à garder exactement à la racine GitHub
 
 ```text
 css/
 img/
 js/
+404.html
+auteur.html
+CNAME
+contact.html
 index.html
 livre.html
-auteur.html
+mentions-legales.html
+merci.html
 presse.html
-contact.html
-CNAME
-...
+robots.txt
+sitemap.xml
+site.webmanifest
+.nojekyll
 ```
 
-Ne créez pas de dossier `assets` avec cette version.
+Le domaine est déjà configuré sur `marcmontcel.be`.
+
+Pour installer cette V2 :
+1. décompresser le ZIP ;
+2. sur GitHub > Add file > Upload files ;
+3. envoyer tout le contenu décompressé ;
+4. accepter le remplacement des fichiers existants ;
+5. Commit changes ;
+6. attendre 1 à 3 minutes le redéploiement GitHub Pages.
+
+Ne pas créer de dossier `assets`.

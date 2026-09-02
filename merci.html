@@ -4,93 +4,101 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Merci — Marc Montcel</title>
-<meta name="description" content="Confirmation d&#x27;envoi du formulaire de contact.">
-<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Confirmation d'envoi du formulaire.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://marcmontcel.be/merci.html">
-<meta name="theme-color" content="#171111">
+<meta name="theme-color" content="#090707">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marc Montcel">
 <meta property="og:title" content="Merci — Marc Montcel">
-<meta property="og:description" content="Confirmation d&#x27;envoi du formulaire de contact.">
+<meta property="og:description" content="Confirmation d'envoi du formulaire.">
 <meta property="og:url" content="https://marcmontcel.be/merci.html">
 <meta property="og:image" content="https://marcmontcel.be/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Merci — Marc Montcel">
-<meta name="twitter:description" content="Confirmation d&#x27;envoi du formulaire de contact.">
-<meta name="twitter:image" content="https://marcmontcel.be/img/og.jpg">
 
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/couverture.webp" as="image">
 <link rel="stylesheet" href="css/style.css">
 <script defer src="js/main.js"></script>
 
 
 </head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
+<body class="page-thanks">
+<a class="skip-link" href="#main">Aller au contenu</a>
 
-<header class="site-header" id="top">
-  <div class="shell nav-shell">
-    <a class="brand" href="index.html" aria-label="Marc Montcel - accueil">
-      <span class="brand-monogram">MM</span>
-      <span><strong>Marc Montcel</strong><small>Auteur indépendant</small></span>
+<header class="site-header" data-header>
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Marc Montcel — Accueil">
+      <span class="brand-sign">M</span>
+      <span class="brand-copy">
+        <strong>Marc Montcel</strong>
+        <small>Auteur</small>
+      </span>
     </a>
-    <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-btn>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-nav-toggle>
       <span></span><span></span><span></span>
     </button>
-    <nav class="main-nav" data-menu>
+
+    <nav class="nav-links" data-nav>
       <a href="index.html">Accueil</a>
       <a href="livre.html">Le livre</a>
-      <a href="auteur.html">L'auteur</a>
+      <a href="auteur.html">L’auteur</a>
       <a href="presse.html">Presse</a>
       <a href="contact.html">Contact</a>
-      <a class="btn btn-sm" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter le livre</a>
+      <a class="nav-buy" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter <span>→</span></a>
     </nav>
   </div>
 </header>
 
-<main id="contenu">
-<section class="page-hero thanks">
-  <div class="shell narrow center">
-    <p class="kicker">MESSAGE ENVOYÉ</p>
+<main id="main">
+<section class="thankyou">
+  <div class="container thankyou-inner">
+    <span class="thank-mark">✓</span>
+    <p class="eyebrow light"><span></span>MESSAGE ENVOYÉ</p>
     <h1>Merci.</h1>
-    <p class="lead">Votre message a bien été transmis. Je reviendrai vers vous dès que possible.</p>
-    <a class="btn" href="index.html">Retour à l’accueil</a>
+    <p>Votre message a bien été transmis.</p>
+    <a class="button button-gold" href="index.html">Retour à l’accueil <b>→</b></a>
   </div>
 </section>
 </main>
 
 <footer class="site-footer">
-  <div class="shell footer-grid">
-    <div>
-      <a class="brand footer-brand" href="index.html">
-        <span class="brand-monogram">MM</span>
-        <span><strong>Marc Montcel</strong><small>Auteur indépendant</small></span>
-      </a>
-      <p class="footer-intro">Site officiel de Marc Montcel, auteur de <em>Dans les coulisses de Michel Sardou</em>.</p>
-      <p class="fine">Ouvrage indépendant et non officiel, sans affiliation avec Michel Sardou ou ses représentants.</p>
+  <div class="container footer-top">
+    <div class="footer-main">
+      <span class="footer-mark">M</span>
+      <div>
+        <strong>Marc Montcel</strong>
+        <p>Auteur de <em>Dans les coulisses de Michel Sardou</em>.</p>
+      </div>
     </div>
-    <div class="footer-col">
-      <strong>Navigation</strong>
-      <a href="livre.html">Le livre</a>
-      <a href="auteur.html">L'auteur</a>
-      <a href="presse.html">Espace presse</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-col">
-      <strong>Liens</strong>
-      <a href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Amazon</a>
-      <a href="https://www.maxifrance.radio/dans-les-coulisses-de-michel-sardou/" target="_blank" rel="noopener">Maxi France Radio</a>
-      <a href="mentions-legales.html">Mentions & confidentialité</a>
+    <div class="footer-nav">
+      <div>
+        <span>Navigation</span>
+        <a href="livre.html">Le livre</a>
+        <a href="auteur.html">L’auteur</a>
+        <a href="presse.html">Presse</a>
+      </div>
+      <div>
+        <span>Contact</span>
+        <a href="mailto:marcmontcel@gmail.com">marcmontcel@gmail.com</a>
+        <a href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Amazon</a>
+      </div>
     </div>
   </div>
-  <div class="shell footer-bottom">
+  <div class="container footer-bottom">
     <span>© <span data-year></span> Marc Montcel</span>
-    <a href="mailto:marcmontcel@gmail.com">marcmontcel@gmail.com</a>
+    <span>Ouvrage indépendant et non officiel.</span>
+    <a href="mentions-legales.html">Mentions & confidentialité</a>
   </div>
 </footer>
+
+<a class="mobile-buy" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">
+  <span>Acheter le livre</span><strong>Amazon →</strong>
+</a>
 
 </body>
 </html>
