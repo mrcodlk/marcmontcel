@@ -4,73 +4,752 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Marc Montcel — Dans les coulisses de Michel Sardou</title>
-<meta name="description" content="Site officiel de Marc Montcel, auteur de « Dans les coulisses de Michel Sardou », ouvrage indépendant consacré aux anecdotes et à l'homme derrière les projecteurs.">
+<meta name="description" content="Site officiel de Marc Montcel, auteur de « Dans les coulisses de Michel Sardou », un livre indépendant consacré aux anecdotes et à l’homme derrière les projecteurs.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://marcmontcel.be/">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f3efe8">
+<meta name="theme-color" content="#f4f0e8">
+
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Marc Montcel">
 <meta property="og:title" content="Marc Montcel — Dans les coulisses de Michel Sardou">
-<meta property="og:description" content="Un livre de fan, pensé pour les fans.">
+<meta property="og:description" content="Un livre de fan, pensé pour les fans. Découvrez l’homme derrière la scène.">
 <meta property="og:url" content="https://marcmontcel.be/">
 <meta property="og:image" content="https://marcmontcel.be/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script defer src="js/main.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "url": "https://marcmontcel.be/", "name": "Marc Montcel", "inLanguage": "fr-BE"}, {"@type": "Person", "name": "Marc Montcel", "url": "https://marcmontcel.be/", "jobTitle": "Auteur", "email": "mailto:marcmontcel@gmail.com"}, {"@type": "Book", "name": "Dans les coulisses de Michel Sardou", "isbn": "9798194796762", "author": {"@type": "Person", "name": "Marc Montcel"}, "inLanguage": "fr", "bookFormat": "https://schema.org/Paperback", "image": "https://marcmontcel.be/img/couverture.webp", "url": "https://marcmontcel.be/#livre", "potentialAction": {"@type": "BuyAction", "target": "https://www.amazon.fr/dp/B0HGGFF3XF"}}]}</script>
-</head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="header" data-header>
+<style>
+:root {
+  --paper:#f4f0e8;
+  --paper2:#fbf8f2;
+  --ink:#171412;
+  --muted:#6e6760;
+  --line:#d7cec3;
+  --dark:#11100f;
+  --red:#8f171d;
+  --gold:#b78743;
+  --gold-light:#d0aa6f;
+  --max:1160px;
+}
+
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img { display:block; max-width:100%; height:auto; }
+a { color:inherit; }
+h1,h2,h3,.serif { font-family:Georgia,"Times New Roman",serif; }
+.container { width:min(calc(100% - 40px),var(--max)); margin:auto; }
+
+.skip {
+  position:absolute; left:-9999px;
+}
+.skip:focus {
+  left:12px; top:12px; z-index:999;
+  background:#fff; padding:10px 14px;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(244,240,232,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav {
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+.brand-mark {
+  width:38px;
+  height:38px;
+  border:1px solid #9f968d;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  color:var(--red);
+  font-size:18px;
+}
+.brand strong {
+  font-family:Georgia,serif;
+  font-size:18px;
+  font-weight:normal;
+}
+.menu {
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.menu a {
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  color:#4e4945;
+}
+.menu a:hover { color:#000; }
+.menu .buy {
+  padding-left:22px;
+  border-left:1px solid var(--line);
+  color:var(--red);
+}
+.menu-toggle {
+  display:none;
+  background:none;
+  border:0;
+  padding:8px;
+}
+.menu-toggle span {
+  display:block;
+  width:24px;
+  height:2px;
+  background:var(--ink);
+  margin:5px 0;
+}
+
+.hero {
+  padding:82px 0 92px;
+  background:linear-gradient(135deg,#f8f5ef 0%,#eee7dc 100%);
+}
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:80px;
+  align-items:center;
+}
+.kicker {
+  margin:0 0 16px;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--gold);
+}
+.hero h1 {
+  margin:.12em 0 .28em;
+  font-size:clamp(3.6rem,6vw,6.7rem);
+  line-height:.94;
+  letter-spacing:-.045em;
+  font-weight:normal;
+}
+.hero h1 span { color:var(--red); }
+.hero p {
+  max-width:650px;
+  color:var(--muted);
+  font-size:1.12rem;
+}
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:30px 0 34px;
+}
+.btn {
+  display:inline-flex;
+  min-height:50px;
+  padding:0 22px;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:.18s;
+}
+.btn:hover { transform:translateY(-2px); }
+.btn-dark {
+  background:var(--dark);
+  color:#fff;
+}
+.btn-light {
+  border-color:#9b938b;
+  background:transparent;
+}
+.btn-light:hover {
+  background:#fff;
+}
+.quick-facts {
+  display:flex;
+  flex-wrap:wrap;
+  gap:26px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.quick-facts div {
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+}
+.quick-facts strong {
+  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:normal;
+}
+.quick-facts span {
+  font-size:10px;
+  line-height:1.35;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#7d756f;
+}
+.cover-wrap {
+  width:min(360px,75vw);
+  margin:auto;
+  position:relative;
+}
+.cover-wrap:before {
+  content:"";
+  position:absolute;
+  inset:8% -8% -6% 7%;
+  background:#c9bdaa;
+  filter:blur(28px);
+  opacity:.45;
+}
+.cover-wrap img {
+  position:relative;
+  z-index:1;
+  box-shadow:0 36px 70px rgba(35,20,12,.20);
+}
+.cover-note {
+  width:min(360px,75vw);
+  margin:16px auto 0;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#817970;
+}
+
+.stats {
+  background:var(--dark);
+  color:#fff;
+}
+.stats-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+.stat {
+  padding:28px 0;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  border-right:1px solid #292623;
+}
+.stat:last-child { border-right:0; }
+.stat strong {
+  color:var(--gold-light);
+  font-family:Georgia,serif;
+  font-size:2.5rem;
+  font-weight:normal;
+  line-height:1;
+}
+.stat span {
+  margin-top:4px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#96908a;
+}
+
+.section {
+  padding:100px 0;
+}
+.section.alt {
+  background:var(--paper2);
+}
+.grid-2 {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:80px;
+  align-items:start;
+}
+.section-title {
+  font-size:clamp(2.7rem,4.5vw,4.8rem);
+  line-height:.98;
+  letter-spacing:-.035em;
+  font-weight:normal;
+  margin:.18em 0 .35em;
+}
+.section-title em {
+  color:var(--red);
+}
+.copy {
+  color:var(--muted);
+  max-width:720px;
+}
+.copy p:first-child {
+  font-family:Georgia,serif;
+  font-size:1.35rem;
+  line-height:1.5;
+  color:var(--ink);
+}
+.quote {
+  margin-top:40px;
+  padding:32px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  font-family:Georgia,serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);
+  line-height:1.15;
+  color:var(--red);
+}
+
+.book-details {
+  background:#e8e1d6;
+}
+.back-wrap {
+  width:min(320px,72vw);
+  margin:auto;
+  position:relative;
+}
+.back-wrap:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid #bba98f;
+  transform:translate(-13px,13px);
+}
+.back-wrap img {
+  position:relative;
+  z-index:1;
+  box-shadow:0 28px 55px rgba(35,20,12,.15);
+}
+.info-list {
+  margin:30px 0 32px;
+  border-top:1px solid #c8bfb5;
+}
+.info-list div {
+  display:grid;
+  grid-template-columns:145px 1fr;
+  padding:12px 0;
+  border-bottom:1px solid #c8bfb5;
+}
+.info-list span {
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#7d756f;
+}
+.info-list strong {
+  font-family:Georgia,serif;
+  font-weight:normal;
+}
+
+.author {
+  background:var(--dark);
+  color:#fff;
+}
+.author .grid-2 {
+  align-items:center;
+}
+.author h2 {
+  color:#fff;
+}
+.author .kicker {
+  color:var(--gold-light);
+}
+.author .copy {
+  color:#aaa39d;
+}
+.author .copy p:first-child {
+  color:#fff;
+}
+.author .copy em {
+  color:var(--gold-light);
+}
+
+.press-card {
+  display:grid;
+  grid-template-columns:130px 1fr 40px;
+  gap:30px;
+  align-items:center;
+  text-decoration:none;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:30px 0;
+}
+.press-date strong {
+  display:block;
+  font-family:Georgia,serif;
+  font-size:4rem;
+  line-height:1;
+  color:var(--gold);
+  font-weight:normal;
+}
+.press-date span {
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#817970;
+}
+.press-copy small {
+  color:var(--gold);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+.press-copy h3 {
+  margin:.25em 0;
+  font-size:clamp(1.7rem,2.8vw,2.8rem);
+  line-height:1.12;
+  font-weight:normal;
+}
+.press-copy p {
+  margin:0;
+  color:var(--muted);
+}
+.press-arrow {
+  font-size:2rem;
+  color:var(--red);
+}
+
+.cta {
+  background:#8a151b;
+  color:#fff;
+  text-align:center;
+  padding:85px 0;
+}
+.cta .kicker {
+  color:#e6c38e;
+}
+.cta h2 {
+  font-size:clamp(3rem,5vw,5rem);
+  margin:.2em 0 .5em;
+  font-weight:normal;
+}
+.cta .btn {
+  background:#fff;
+  color:#151515;
+}
+
+.contact {
+  background:#e9e1d6;
+}
+.contact-grid {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+.email {
+  display:inline-block;
+  margin-top:12px;
+  font-family:Georgia,serif;
+  font-size:1.4rem;
+  color:var(--red);
+  text-decoration:none;
+}
+form {
+  background:#f8f5ef;
+  padding:32px;
+}
+.form-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+label {
+  display:block;
+  margin-bottom:18px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#645e59;
+  font-weight:700;
+}
+input,select,textarea {
+  width:100%;
+  margin-top:6px;
+  padding:11px 0;
+  border:0;
+  border-bottom:1px solid #bdb2a8;
+  background:transparent;
+  outline:none;
+  color:var(--ink);
+}
+input:focus,select:focus,textarea:focus {
+  border-bottom-color:var(--red);
+}
+textarea {
+  resize:vertical;
+}
+.consent {
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:11px;
+  text-transform:none;
+  letter-spacing:0;
+  font-weight:normal;
+}
+.consent input {
+  width:auto;
+  margin-top:3px;
+}
+.hp { display:none !important; }
+
+footer {
+  background:#0d0c0b;
+  color:#fff;
+  padding:50px 0 18px;
+}
+.footer-grid {
+  display:grid;
+  grid-template-columns:1fr 1.3fr .7fr;
+  gap:50px;
+}
+.footer-grid p {
+  margin:0;
+  color:#77716c;
+  font-size:12px;
+}
+.footer-links {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.footer-links a {
+  color:#aaa39e;
+  text-decoration:none;
+  font-size:12px;
+}
+.footer-bottom {
+  margin-top:36px;
+  padding-top:15px;
+  border-top:1px solid #24211f;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#5b5652;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.footer-bottom a {
+  color:#5b5652;
+  text-decoration:none;
+}
+
+.mobile-buy {
+  display:none;
+}
+
+@media (max-width:900px) {
+  .menu-toggle { display:block; }
+  .menu {
+    display:none;
+    position:absolute;
+    top:72px;
+    left:20px;
+    right:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:var(--paper2);
+    border:1px solid var(--line);
+    padding:14px;
+  }
+  .menu.open { display:flex; }
+  .menu a {
+    padding:11px 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .menu .buy {
+    border-left:0;
+    padding-left:4px;
+    border-bottom:0;
+  }
+
+  .hero-grid,
+  .grid-2,
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+  .hero-grid {
+    gap:50px;
+  }
+  .grid-2,
+  .contact-grid {
+    gap:45px;
+  }
+}
+
+@media (max-width:620px) {
+  .container {
+    width:min(calc(100% - 28px),var(--max));
+  }
+  .nav {
+    height:66px;
+  }
+  .hero {
+    padding:55px 0 65px;
+  }
+  .hero h1 {
+    font-size:3.35rem;
+  }
+  .actions {
+    flex-direction:column;
+  }
+  .btn {
+    width:100%;
+  }
+  .quick-facts {
+    justify-content:space-between;
+    gap:12px;
+  }
+  .quick-facts div {
+    flex-direction:column;
+    gap:2px;
+  }
+  .quick-facts strong {
+    font-size:24px;
+  }
+  .cover-wrap,
+  .cover-note {
+    width:min(280px,75vw);
+  }
+
+  .stats-grid {
+    grid-template-columns:1fr;
+  }
+  .stat {
+    border-right:0;
+    border-bottom:1px solid #292623;
+    padding:18px 0;
+  }
+  .stat:last-child {
+    border-bottom:0;
+  }
+
+  .section {
+    padding:72px 0;
+  }
+  .section-title {
+    font-size:3rem;
+  }
+
+  .press-card {
+    grid-template-columns:1fr 34px;
+    gap:18px;
+  }
+  .press-date {
+    grid-column:1/-1;
+  }
+  .press-copy h3 {
+    font-size:1.65rem;
+  }
+
+  .form-row {
+    grid-template-columns:1fr;
+  }
+  form {
+    padding:24px;
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .footer-bottom {
+    flex-direction:column;
+    gap:6px;
+  }
+  footer {
+    padding-bottom:78px;
+  }
+
+  .mobile-buy {
+    display:flex;
+    position:fixed;
+    z-index:80;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    background:var(--dark);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 15px;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 12px 28px rgba(0,0,0,.22);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-weight:700;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header>
   <div class="container nav">
-    <a class="logo" href="#accueil">
-      <span class="logo-mark">M</span>
-      <span class="logo-name">Marc Montcel</span>
+    <a class="brand" href="#accueil">
+      <span class="brand-mark">M</span>
+      <strong>Marc Montcel</strong>
     </a>
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" data-toggle>
+
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" id="menuToggle">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav-links" data-menu>
+
+    <nav class="menu" id="menu">
       <a href="#livre">Le livre</a>
       <a href="#auteur">L’auteur</a>
       <a href="#presse">Presse</a>
       <a href="#contact">Contact</a>
-      <a class="buy-link" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter le livre ↗</a>
+      <a class="buy" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter ↗</a>
     </nav>
   </div>
 </header>
 
-<main id="contenu">
+<main id="main">
 <section class="hero" id="accueil">
   <div class="container hero-grid">
-    <div class="hero-copy reveal">
+    <div>
       <p class="kicker">NOUVEAUTÉ · 2026</p>
-      <h1>Dans les coulisses<br>de <em>Michel Sardou</em></h1>
-      <p class="intro">Un livre indépendant pour découvrir l’homme derrière la scène, à travers des anecdotes, des souvenirs et des histoires de coulisses.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter sur Amazon <span>↗</span></a>
-        <a class="btn secondary" href="#livre">Découvrir le livre</a>
+      <h1>Dans les coulisses<br>de <span>Michel Sardou</span></h1>
+      <p>Un livre indépendant qui rassemble anecdotes, souvenirs et scènes de coulisses pour découvrir l’homme derrière les chansons et les projecteurs.</p>
+
+      <div class="actions">
+        <a class="btn btn-dark" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter sur Amazon ↗</a>
+        <a class="btn btn-light" href="#livre">Découvrir le livre</a>
       </div>
-      <div class="hero-note">
-        <span>140 exemplaires vendus en une semaine</span>
-        <span>Autoédition</span>
-        <span>Amazon au lancement</span>
+
+      <div class="quick-facts">
+        <div><strong>140</strong><span>exemplaires<br>en une semaine</span></div>
+        <div><strong>100%</strong><span>autoédition</span></div>
+        <div><strong>1</strong><span>canal de vente<br>au lancement</span></div>
       </div>
     </div>
 
-    <div class="hero-book reveal delay">
-      <div class="book-card">
-        <div class="book-shadow"></div>
-        <img src="img/couverture.webp" alt="Couverture du livre Dans les coulisses de Michel Sardou, de Marc Montcel" width="604" height="947">
+    <div>
+      <div class="cover-wrap">
+        <img src="img/couverture.webp" alt="Couverture de Dans les coulisses de Michel Sardou, de Marc Montcel" width="604" height="947">
       </div>
-      <div class="book-caption">
+      <div class="cover-note">
         <span>Marc Montcel</span>
         <span>ISBN 9798194796762</span>
       </div>
@@ -80,137 +759,126 @@
 
 <section class="stats">
   <div class="container stats-grid">
-    <div><strong>140</strong><span>exemplaires<br>en 7 jours</span></div>
-    <div><strong>100%</strong><span>publication<br>indépendante</span></div>
-    <div><strong>1</strong><span>canal de vente<br>au lancement</span></div>
+    <div class="stat"><strong>140</strong><span>livres vendus<br>en sept jours</span></div>
+    <div class="stat"><strong>0</strong><span>maison d’édition<br>traditionnelle</span></div>
+    <div class="stat"><strong>1</strong><span>plateforme de vente<br>au lancement</span></div>
   </div>
 </section>
 
-<section class="section book-section" id="livre">
-  <div class="container editorial-grid">
-    <div class="side-label reveal">
-      <span>01</span><i></i><small>Le livre</small>
+<section class="section alt" id="livre">
+  <div class="container grid-2">
+    <div>
+      <p class="kicker">LE PROJET</p>
+      <h2 class="section-title">Un livre de fan,<br><em>pensé pour les fans.</em></h2>
     </div>
 
-    <div class="section-title reveal delay">
-      <p class="kicker dark">LE PROJET</p>
-      <h2>Un livre de fan,<br><em>pensé pour les fans.</em></h2>
-    </div>
-
-    <div class="section-copy reveal delay2">
-      <p class="lead">Ce livre est né d’un regard de fan. Il ne raconte pas l’histoire des chansons de Michel Sardou et ne prétend pas retracer sa vie de façon exhaustive.</p>
+    <div class="copy">
+      <p>Ce livre est né d’un regard de fan. Il ne raconte pas l’histoire des chansons de Michel Sardou et ne prétend pas retracer sa vie de façon exhaustive.</p>
       <p>Il rassemble des anecdotes, des souvenirs, des scènes de coulisses et des moments parfois oubliés, compilés à partir d’interviews, d’archives télévisées et radiophoniques, de reportages et de témoignages publics.</p>
       <p>Des habitudes de tournée aux petites phrases, des engueulades mémorables aux instants plus intimes rendus publics par l’artiste lui-même, on y découvre l’homme derrière la scène.</p>
+
+      <div class="quote">« Tout le monde connaît Sardou. Mais qui connaît vraiment l’homme en coulisses ? »</div>
     </div>
   </div>
 </section>
 
-<section class="quote-section">
-  <div class="container quote-box reveal">
-    <span class="quote-mark">“</span>
-    <blockquote>Tout le monde connaît Sardou.<br>Mais qui connaît vraiment l’homme en coulisses&nbsp;?</blockquote>
-  </div>
-</section>
-
-<section class="section object-section">
-  <div class="container object-grid">
-    <div class="back-cover reveal">
-      <div class="cover-frame">
-        <img src="img/quatrieme.webp" alt="Quatrième de couverture du livre" width="575" height="937" loading="lazy">
+<section class="section book-details">
+  <div class="container grid-2">
+    <div>
+      <div class="back-wrap">
+        <img src="img/quatrieme.webp" alt="Quatrième de couverture de Dans les coulisses de Michel Sardou" width="575" height="937" loading="lazy">
       </div>
     </div>
-    <div class="object-copy reveal delay">
-      <p class="kicker dark">L’OUVRAGE</p>
-      <h2>Un livre à lire,<br><em>à offrir, à garder.</em></h2>
-      <p>Un ouvrage broché conçu comme une succession d’histoires courtes. Pas de longues digressions : on entre directement dans l’anecdote, l’ambiance et les coulisses.</p>
 
-      <dl class="book-info">
-        <div><dt>Auteur</dt><dd>Marc Montcel</dd></div>
-        <div><dt>Langue</dt><dd>Français</dd></div>
-        <div><dt>Édition</dt><dd>Indépendante</dd></div>
-        <div><dt>ISBN</dt><dd>9798194796762</dd></div>
-      </dl>
+    <div>
+      <p class="kicker">L’OUVRAGE</p>
+      <h2 class="section-title">Un livre à lire,<br><em>à offrir, à garder.</em></h2>
+      <div class="copy">
+        <p>Un ouvrage broché conçu comme une succession d’histoires courtes. On entre directement dans l’anecdote, l’atmosphère et les coulisses.</p>
+      </div>
 
-      <a class="btn dark-btn" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Voir le livre sur Amazon <span>↗</span></a>
+      <div class="info-list">
+        <div><span>Auteur</span><strong>Marc Montcel</strong></div>
+        <div><span>Langue</span><strong>Français</strong></div>
+        <div><span>Édition</span><strong>Indépendante</strong></div>
+        <div><span>ISBN</span><strong>9798194796762</strong></div>
+      </div>
+
+      <a class="btn btn-dark" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Voir le livre sur Amazon ↗</a>
     </div>
   </div>
 </section>
 
-<section class="author-section" id="auteur">
-  <div class="container author-grid">
-    <div class="author-intro reveal">
-      <p class="kicker gold">L’AUTEUR</p>
-      <h2>Marc Montcel</h2>
-      <p class="author-meta">Liège · Belgique</p>
+<section class="section author" id="auteur">
+  <div class="container grid-2">
+    <div>
+      <p class="kicker">L’AUTEUR</p>
+      <h2 class="section-title">Marc Montcel</h2>
+      <p style="color:#777; font-size:10px; letter-spacing:.12em; text-transform:uppercase;">Liège · Belgique</p>
     </div>
-    <div class="author-copy reveal delay">
-      <p class="author-lead">Écrire depuis la passion, publier en dehors des circuits traditionnels et aller directement à la rencontre des lecteurs.</p>
+
+    <div class="copy">
+      <p>Écrire depuis la passion, publier en dehors des circuits traditionnels et aller directement à la rencontre des lecteurs.</p>
       <p>Passionné par Michel Sardou et par l’univers de la chanson française, Marc Montcel publie en 2026 <em>Dans les coulisses de Michel Sardou</em>, un ouvrage indépendant centré sur les anecdotes, les moments de scène et l’envers du décor.</p>
-      <p>Le livre est écrit, préparé et publié en autoédition. Lors de son lancement, Amazon en est l’unique canal de vente.</p>
+      <p>Le livre a été écrit, préparé et publié en autoédition. Lors de son lancement, Amazon en était l’unique canal de vente.</p>
     </div>
   </div>
 </section>
 
-<section class="section press-section" id="presse">
+<section class="section alt" id="presse">
   <div class="container">
-    <div class="press-top reveal">
-      <div>
-        <p class="kicker dark">PRESSE</p>
-        <h2>Le livre commence<br>à faire parler de lui.</h2>
-      </div>
-    </div>
+    <p class="kicker">PRESSE</p>
+    <h2 class="section-title">Le livre commence<br>à faire parler de lui.</h2>
 
-    <a class="press-row reveal delay" href="https://www.maxifrance.radio/dans-les-coulisses-de-michel-sardou/" target="_blank" rel="noopener">
-      <div class="press-date"><strong>28</strong><span>AOÛT<br>2026</span></div>
-      <div class="press-content">
+    <a class="press-card" href="https://www.maxifrance.radio/dans-les-coulisses-de-michel-sardou/" target="_blank" rel="noopener">
+      <div class="press-date">
+        <strong>28</strong>
+        <span>août<br>2026</span>
+      </div>
+      <div class="press-copy">
         <small>MAXI FRANCE RADIO</small>
         <h3>« Dans les coulisses de Michel Sardou » : Marc Montcel nous invite à découvrir l’envers du décor</h3>
         <p>Présentation du livre, de sa démarche et de son angle consacré à l’homme derrière la scène.</p>
       </div>
       <div class="press-arrow">↗</div>
     </a>
-
-    <div class="press-fact reveal">
-      <span class="big-number">140</span>
-      <div>
-        <strong>livres vendus en une semaine</strong>
-        <p>Sans maison d’édition et avec un seul canal de vente au lancement.</p>
-      </div>
-    </div>
   </div>
 </section>
 
 <section class="cta">
-  <div class="container cta-inner reveal">
-    <p class="kicker gold">DANS LES COULISSES DE MICHEL SARDOU</p>
-    <h2>Disponible maintenant.</h2>
-    <a class="btn primary" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter le livre <span>↗</span></a>
+  <div class="container">
+    <p class="kicker">DANS LES COULISSES DE MICHEL SARDOU</p>
+    <h2 class="serif">Disponible maintenant.</h2>
+    <a class="btn" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">Acheter le livre sur Amazon ↗</a>
   </div>
 </section>
 
-<section class="section contact-section" id="contact">
+<section class="section contact" id="contact">
   <div class="container contact-grid">
-    <div class="contact-copy reveal">
-      <p class="kicker dark">CONTACT</p>
-      <h2>Une question,<br><em>une interview ?</em></h2>
-      <p>Lecteurs, journalistes, libraires ou professionnels peuvent me contacter directement.</p>
+    <div>
+      <p class="kicker">CONTACT</p>
+      <h2 class="section-title">Une question,<br><em>une interview ?</em></h2>
+      <div class="copy">
+        <p>Lecteurs, journalistes, libraires ou professionnels peuvent me contacter directement.</p>
+      </div>
       <a class="email" href="mailto:marcmontcel@gmail.com">marcmontcel@gmail.com</a>
     </div>
 
-    <form class="contact-form reveal delay" action="https://formsubmit.co/marcmontcel@gmail.com" method="POST">
+    <form action="https://formsubmit.co/marcmontcel@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Nouveau message depuis marcmontcel.be">
       <input type="hidden" name="_next" value="https://marcmontcel.be/#contact">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
-      <div class="form-grid">
+      <div class="form-row">
         <label>Nom
-          <input type="text" name="Nom" required autocomplete="name" placeholder="Votre nom">
+          <input type="text" name="Nom" required autocomplete="name">
         </label>
         <label>E-mail
-          <input type="email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
+          <input type="email" name="Email" required autocomplete="email">
         </label>
       </div>
+
       <label>Sujet
         <select name="Sujet" required>
           <option value="">Choisir</option>
@@ -220,26 +888,33 @@
           <option>Autre</option>
         </select>
       </label>
+
       <label>Message
-        <textarea name="Message" rows="6" required placeholder="Votre message"></textarea>
+        <textarea name="Message" rows="6" required></textarea>
       </label>
+
       <label class="consent">
         <input type="checkbox" required>
         <span>J’accepte que ces informations soient utilisées uniquement pour répondre à ma demande.</span>
       </label>
-      <button class="btn dark-btn submit" type="submit">Envoyer le message <span>→</span></button>
+
+      <button class="btn btn-dark" type="submit">Envoyer le message →</button>
     </form>
   </div>
 </section>
 </main>
 
-<footer class="footer">
+<footer>
   <div class="container footer-grid">
-    <div class="footer-brand">
-      <span class="logo-mark dark-logo">M</span>
-      <div><strong>Marc Montcel</strong><small>Auteur indépendant</small></div>
+    <div>
+      <div class="brand">
+        <span class="brand-mark" style="border-color:#333;">M</span>
+        <strong>Marc Montcel</strong>
+      </div>
     </div>
+
     <p>Site officiel de Marc Montcel. <em>Dans les coulisses de Michel Sardou</em> est un ouvrage indépendant et non officiel.</p>
+
     <div class="footer-links">
       <a href="#livre">Le livre</a>
       <a href="#auteur">L’auteur</a>
@@ -247,14 +922,37 @@
       <a href="#contact">Contact</a>
     </div>
   </div>
+
   <div class="container footer-bottom">
-    <span>© <span data-year></span> Marc Montcel</span>
+    <span>© <span id="year"></span> Marc Montcel</span>
     <a href="mailto:marcmontcel@gmail.com">marcmontcel@gmail.com</a>
   </div>
 </footer>
 
 <a class="mobile-buy" href="https://www.amazon.fr/dp/B0HGGFF3XF" target="_blank" rel="noopener">
-  <span>Acheter le livre</span><strong>Amazon ↗</strong>
+  <span>Acheter le livre</span>
+  <strong>Amazon ↗</strong>
 </a>
+
+<script>
+const toggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
+
+if (toggle && menu) {
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
