@@ -25,3 +25,26 @@ La couverture et la quatrième de couverture fournies par l'auteur sont intégr�
 ## Contact
 Le formulaire statique utilise FormSubmit pour envoyer les messages vers `marcmontcel@gmail.com`.
 Voir `GUIDE-GITHUB.md` pour la mise en ligne.
+
+
+## IMPORTANT — structure du dépôt
+
+Les dossiers `css`, `img` et `js` doivent être directement à la racine du dépôt,
+au même niveau que `index.html`.
+
+Structure attendue :
+
+```text
+css/
+img/
+js/
+index.html
+livre.html
+auteur.html
+presse.html
+contact.html
+CNAME
+...
+```
+
+Ne créez pas de dossier `assets` avec cette version.
