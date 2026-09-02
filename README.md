@@ -1,36 +1,14 @@
-# marcmontcel.be — V2 Premium
+# marcmontcel.be — One Page V3
 
-Version visuelle finale du site de Marc Montcel.
+Version one-page finale.
 
-## Structure à garder exactement à la racine GitHub
+## Installation
+1. Décompresser le ZIP.
+2. Dans GitHub : Add file > Upload files.
+3. Envoyer tout le contenu décompressé à la racine du dépôt.
+4. Remplacer les fichiers existants.
+5. Commit changes.
+6. Attendre le redéploiement GitHub Pages.
+7. Recharger marcmontcel.be avec Ctrl+F5.
 
-```text
-css/
-img/
-js/
-404.html
-auteur.html
-CNAME
-contact.html
-index.html
-livre.html
-mentions-legales.html
-merci.html
-presse.html
-robots.txt
-sitemap.xml
-site.webmanifest
-.nojekyll
-```
-
-Le domaine est déjà configuré sur `marcmontcel.be`.
-
-Pour installer cette V2 :
-1. décompresser le ZIP ;
-2. sur GitHub > Add file > Upload files ;
-3. envoyer tout le contenu décompressé ;
-4. accepter le remplacement des fichiers existants ;
-5. Commit changes ;
-6. attendre 1 à 3 minutes le redéploiement GitHub Pages.
-
-Ne pas créer de dossier `assets`.
+Les anciennes URLs livre.html / auteur.html / presse.html / contact.html redirigent automatiquement vers les sections de la page d'accueil.
